@@ -17,7 +17,7 @@ disabled = true
 #[┌───────────────────>](bold green)
 #[│](bold green)$directory$rust$package
 #[└─>](bold green) """
-#format = """
+format = """
 [╭─user───❯](bold blue) $username
 [┣─system─❯](bold yellow) $hostname
 [┣─project❯](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
