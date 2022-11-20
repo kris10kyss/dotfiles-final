@@ -6,9 +6,9 @@
 add_newline = true
 
 # Replace the "❯" symbol in the prompt with "➜"
-[character] # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[✗](bold red)"
+#[character] # The name of the module we are configuring is "character"
+#success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+#error_symbol = "[✗](bold red)"
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
@@ -35,6 +35,11 @@ ssh_only = false
 format = 'on [MacBook-Pro-14](bold yellow) '
 trim_at = "."
 disabled = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[﬌](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](bold red)"
 
 [battery]
 full_symbol = "🔋"
