@@ -6,14 +6,18 @@
 add_newline = true
 
 # Replace the "❯" symbol in the prompt with "➜"
-#[character] # The name of the module we are configuring is "character"
-#success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
-
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](bold red)"
 # Disable the package module, hiding it from the prompt completely
-#[package]
-#disabled = true
+[package]
+disabled = true
 # ~/.config/starship.toml
-format = """
+#format = """
+#[┌───────────────────>](bold green)
+#[│](bold green)$directory$rust$package
+#[└─>](bold green) """
+#format = """
 [╭─user───❯](bold blue) $username
 [┣─system─❯](bold yellow) $hostname
 [┣─project❯](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
@@ -78,12 +82,12 @@ deleted = "🗑️ ×${count}"
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
-[hostname]
-ssh_only = false
-format = "<$hostname>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
+#[hostname]
+#ssh_only = false
+#format = "<$hostname>"
+#trim_at = "-"
+#style = "bold dimmed white"
+#disabled = true
 
 [julia]
 format = "$symbol$version "
@@ -95,9 +99,6 @@ format = "$symbol${ram}( | ${swap}) "
 threshold = 70
 style = "bold dimmed white"
 disabled = false
-
-[package]
-disabled = true
 
 [python]
 format = "$symbol$version "
@@ -113,6 +114,6 @@ format = "$time($style) "
 style = "bright-white"
 disabled = false
 
-[username]
-style_user = "bold dimmed blue"
-show_always = false
+#[username]
+#style_user = "bold dimmed blue"
+#show_always = false
