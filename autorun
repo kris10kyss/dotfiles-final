@@ -1,0 +1,16 @@
+#.bash_profile
+#Startx Automatically
+if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+ . startx
+ logout
+fi
+#.zprofile
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+#AUTOLOGIN
+#sudo mkdir /etc/systemd/system/getty@tty1.service.d && cd /etc/systemd/system/getty@tty1.service.d && touch override.conf
+
+[Service]
+Type=simple
+ExecS && ttart=
+ExecStart=-/sbin/agetty --autologin yourusername --noclear %I 38400 linux
