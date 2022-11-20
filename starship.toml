@@ -6,17 +6,13 @@
 add_newline = true
 
 # Replace the "❯" symbol in the prompt with "➜"
-#[character] # The name of the module we are configuring is "character"
+[character] # The name of the module we are configuring is "character"
 #success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
-#error_symbol = "[✗](bold red)"
+error_symbol = "[✗](bold red)"
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
 # ~/.config/starship.toml
-#format = """
-#[┌───────────────────>](bold green)
-#[│](bold green)$directory$rust$package
-#[└─>](bold green) """
 format = """
 [╭─user───❯](bold blue) $username
 [┣─system─❯](bold yellow) $hostname
@@ -117,3 +113,6 @@ disabled = false
 #[username]
 #style_user = "bold dimmed blue"
 #show_always = false
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
