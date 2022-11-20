@@ -10,8 +10,8 @@ add_newline = true
 #success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 # Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
+#[package]
+#disabled = true
 # ~/.config/starship.toml
 format = """
 [╭─user───❯](bold blue) $username
@@ -32,6 +32,11 @@ format = 'on [MacBook-Pro-14](bold yellow) '
 trim_at = "."
 disabled = false
 
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[﬌](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](bold red)"
+
 [battery]
 full_symbol = "🔋"
 charging_symbol = "🔌"
@@ -41,8 +46,8 @@ discharging_symbol = "⚡"
 threshold = 30
 style = "bold red"
 
-[character]
-error_symbol = "[✖](bold red) "
+#[character]
+#error_symbol = "[✖](bold red) "
 
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
@@ -78,12 +83,12 @@ deleted = "🗑️  ×${count}"
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
-[hostname]
-ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
+#[hostname]
+#ssh_only = false
+#format = "<[$hostname]($style)>"
+#trim_at = "-"
+#style = "bold dimmed white"
+#disabled = true
 
 [julia]
 format = "[$symbol$version]($style) "
@@ -113,9 +118,9 @@ format = "🕙 $time($style) "
 style = "bright-white"
 disabled = false
 
-[username]
-style_user = "bold dimmed blue"
-show_always = false
+#[username]
+#style_user = "bold dimmed blue"
+#show_always = false
 
 [nodejs]
 format = "via [🤖 $version](bold green) "
