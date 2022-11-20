@@ -19,6 +19,19 @@ format = """
 [┣─project❯](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
 [╰─cmd────❯](bold green) 
 """
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = 'on [MacBook-Pro-14](bold yellow) '
+trim_at = "."
+disabled = false
+
 [battery]
 full_symbol = "🔋"
 charging_symbol = "🔌"
