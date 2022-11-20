@@ -1,3 +1,4 @@
+#Default
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -5,13 +6,17 @@
 add_newline = true
 
 # Replace the "❯" symbol in the prompt with "➜"
-[character] # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+#[character] # The name of the module we are configuring is "character"
+#success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 # Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
+#[package]
+#disabled = true
 # ~/.config/starship.toml
+format = """
+[┌───────────────────>](bold green)
+[│](bold green)$directory$rust$package
+[└─>](bold green) """
 
 [battery]
 full_symbol = "🔋"
@@ -22,19 +27,19 @@ discharging_symbol = "⚡"
 threshold = 30
 style = "bold red"
 
-[character]
-error_symbol = "[✖](bold red) "
+#[character]
+#error_symbol = "[✖](bold red)"
 
 [cmd_duration]
-min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
-format = " took [$duration]($style)"
+min_time = 10_000 # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took $duration"
 
 [directory]
 truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style) "
+format = "$path$lock_symbol "
 
 [git_branch]
-format = " [$symbol$branch]($style) "
+format = " $symbol$branch "
 symbol = "🍣 "
 style = "bold yellow"
 
@@ -43,36 +48,36 @@ commit_hash_length = 8
 style = "bold white"
 
 [git_state]
-format = '[\($state( $progress_current of $progress_total)\)]($style) '
+format = '($state( $progress_current of $progress_total)) '
 
 [git_status]
 conflicted = "⚔️ "
 ahead = "🏎️ 💨 ×${count}"
 behind = "🐢 ×${count}"
 diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
-untracked = "🛤️  ×${count}"
+untracked = "🛤️ ×${count}"
 stashed = "📦 "
 modified = "📝 ×${count}"
-staged = "🗃️  ×${count}"
+staged = "🗃️ ×${count}"
 renamed = "📛 ×${count}"
-deleted = "🗑️  ×${count}"
+deleted = "🗑️ ×${count}"
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
 [hostname]
 ssh_only = false
-format = "<[$hostname]($style)>"
+format = "<$hostname>"
 trim_at = "-"
 style = "bold dimmed white"
 disabled = true
 
 [julia]
-format = "[$symbol$version]($style) "
+format = "$symbol$version "
 symbol = "ஃ "
 style = "bold green"
 
 [memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
+format = "$symbol${ram}( | ${swap}) "
 threshold = 70
 style = "bold dimmed white"
 disabled = false
@@ -81,22 +86,19 @@ disabled = false
 disabled = true
 
 [python]
-format = "[$symbol$version]($style) "
+format = "$symbol$version "
 style = "bold green"
 
 [rust]
-format = "[$symbol$version]($style) "
+format = "$symbol$version "
 style = "bold green"
 
 [time]
-time_format = "%T"
-format = "🕙 $time($style) "
+time_format = "%a, %b %d, %Y | %I:%M%P ️"
+format = "$time($style) "
 style = "bright-white"
 disabled = false
 
 [username]
 style_user = "bold dimmed blue"
 show_always = false
-
-[nodejs]
-format = "via [🤖 $version](bold green) "
